@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 80px;
+    background: linear-gradient( 90deg, rgb(237, 242, 242), rgb(215, 216, 216) );
+}
+
+.logo {
+    height: 80px;
+    background: linear-gradient( white, black );
+}
+
+@media( min-width: 768px ) {
+    .header {
+        justify-content: left;
+    }
+
+    .logo {
+        height: 50px;
+    }
+}
+

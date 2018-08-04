@@ -1,0 +1,67 @@
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 200px;
+    background: linear-gradient( lightblue, white );
+}
+
+.contacts {
+    flex-grow: 1;
+    display: inline-block;
+}
+
+.contacts p {
+    font-size: .8em;
+}
+
+.social {
+    flex-grow: 1;   
+    display: inline-block;
+}
+
+.social ul li {
+    display: flex;
+    width: 130px;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+
+.social ul li span {
+    width: 20px;
+    flex-grow: 0;
+    line-height: 20px;
+    vertical-align: bottom;
+}
+
+.social ul li a {
+    text-align: left;
+    margin-left: 20px;
+    flex-grow: 1;
+    text-decoration: none;
+}
+
+.social ul li a:visited {
+    color: black;
+}
+
+.logo {
+    display: flex;
+    flex: 0 0 100%;
+    flex-flow: row-reverse;
+    align-items: flex-end;
+}
+
+.logo img {
+    margin-right: 25px;
+}
+
+@media( min-width: 768px ) {
+    .logo {
+        flex: 1;
+        align-items: center;
+    }
+
+
+}
