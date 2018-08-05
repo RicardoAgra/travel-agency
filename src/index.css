@@ -1,3 +1,11 @@
+html {
+  --red: #CF4140;
+  --purple: #713093;
+  --light-grey: #DCDCDC;
+
+  --title-font: 'Pacifico', cursive;
+}
+
 * {
   box-sizing: border-box;
 }

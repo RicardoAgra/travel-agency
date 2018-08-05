@@ -1,0 +1,24 @@
+.preview {
+    position: relative;
+    width: 220px;
+    height: 150px;
+    background-color: var( --light-grey );
+    margin: 0 auto;
+}
+
+.triangle {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -15px;
+    width: 0; 
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 20px solid white;
+}
+
+.title {
+    font: 1.5em var( --title-font );
+    color: var( --purple );
+}

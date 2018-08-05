@@ -1,0 +1,32 @@
+.cityAlbum {
+    margin: 20px;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    margin-left: 40px;
+    font-size: 1.8em;
+    color: var( --red );
+    font-family: var( --title-font );
+}
+
+.line {
+    height: 4px;
+    border-bottom: 2px solid var( --red );
+    border-radius: 1px;
+    flex-grow: 1;
+}
+
+.productBoxes {
+    display: flex;
+    margin: 0 -10px;
+}
+
+.productBoxes li {
+    flex-grow: 1;
+    margin: 10px;
+} 
