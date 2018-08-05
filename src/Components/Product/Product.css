@@ -1,11 +1,13 @@
-.cityAlbum {
-    margin: 20px;
+.product {
+    max-width: 1220px;
+    margin: 80px auto;
 }
 
 .heading {
     display: flex;
     position: relative;
     align-items: center;
+    padding: 0 20px;
 }
 
 .heading .listViewBtn {
@@ -20,7 +22,7 @@
 }
 
 .heading .title {
-    margin-left: 40px;
+    margin: 0 0 0 40px;
     font-size: 1.8em;
     color: var( --red );
     font-family: var( --title-font );
@@ -29,8 +31,10 @@
 .productBoxes {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     margin: 0 -10px;
+    width: 100%;
+    transition: all 1s;
 }
 
 .productBoxes:after {
@@ -42,12 +46,18 @@
     margin: 10px;
 }
 
+.emptyWrap {
+    height: 0;
+    width: 220px;
+}
+
 @media( min-width: 768px ){
     .heading {
         overflow: hidden;
     }
 
     .heading .listViewBtn {
+        cursor: pointer;
         display: block;
         position: absolute;
         top: 50%;
@@ -70,11 +80,14 @@
         border: 2px outset;
         display: block;
         margin-top: 2px;
-        height: 26px;
-        width: 22px;
         height: 40px;
         width: 40px;
         padding: 5px;  
     }
 
+    .productBoxes.listView {
+        display: block;
+        flex-direction: row;
+        padding: 0 20px;
+    }
 }

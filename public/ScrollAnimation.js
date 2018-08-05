@@ -1,20 +1,18 @@
-console.log( "Scroll Animation" );
-
 window.onload = function() {
     var header = document.getElementById( 'header' );
     
     if( header ){
-        var wasClassAdded = false;
+        var wasUpdated = false;
 
         window.onscroll = function() {
             
-            if( window.scrollY > 0 && !wasClassAdded ){
-                header.style.height = "40px";
-                wasClassAdded = true;
+            if( window.scrollY > 0 && !wasUpdated ){
+                header.classList.add( "hasScrolled" );
+                wasUpdated = true;
             }
-            else if( ( window.scrollY === 0 ) && wasClassAdded ) {
-                header.style.height = "80px";
-                wasClassAdded = false;
+            else if( ( window.scrollY === 0 ) && wasUpdated ) {
+                header.classList.remove( "hasScrolled" );
+                wasUpdated = false;
             }
         }
     }

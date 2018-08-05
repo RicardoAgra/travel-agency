@@ -1,0 +1,144 @@
+.productBox:hover {
+    box-shadow: 0 0 5px grey;
+}
+
+.productBox .actionBox {
+    visibility: hidden;
+}
+
+.productBox:hover .actionBox {
+    visibility: visible;
+}
+
+.preview {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    width: 220px;
+    height: 150px;
+    margin: 0 auto;
+    transition: all .2s;
+}
+
+.productBox:hover .preview {
+    background: linear-gradient( rgba( 0,0,0,.5 ), rgba( 0,0,0,.5 ) );
+}
+
+.preview span {
+    position: absolute;
+    display: none;
+    color: white;
+    font-size: 1.5em;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%,-50% );
+}
+
+.productBox:hover span {
+    display: block;
+}
+
+.preview img {
+    z-index: -1;
+    width: 150%;
+    height: 150%;
+    transform: translate( -33%, -33% );
+    transition: all .5s;
+}
+
+.productBox:hover img {
+    width: 150%;
+    height: 150%;
+    transform: rotate( 15deg ) translate( -15%,-10% );
+}
+
+.triangle {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -15px;
+    width: 0; 
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 21px solid white;
+}
+
+.title {
+    font: 1.5em var( --title-font );
+    color: var( --purple );
+}
+
+.orderBtn {
+    cursor: pointer;
+    opacity: 0;
+    background-color: white;
+    width: 100%;
+    background-color: var( --red );
+    height: 50px;
+}
+
+.orderBtn:hover {
+    color: white;
+    transition: all .5s;
+}
+
+.productBox:hover .orderBtn {
+    opacity: 1;
+    background-color: var( --red );
+}
+
+@media( min-width: 768px ){
+    
+    .listView {
+        display: flex;
+        align-content: space-between;
+        align-items: center;
+        margin: 10px 0;
+    }
+
+    .listView .info {
+        flex-grow: 1;
+        margin-left: 20px;
+        text-align: left;
+    }
+
+    .listView .info .title {
+        margin: 0;
+    }   
+
+    .listView .info .description {
+        margin: 5px 0 10px 0;
+    }
+
+    .listView .actionBox {
+        visibility: visible;
+    }
+
+    .listView .actionBox ul {
+        width: 150px;
+        justify-content: space-between; 
+    }
+
+    .listView .triangle {
+        top: 50%;
+        left: auto;
+        right: 0;
+        transform: rotate( -90deg ) translate( 25%, 25% );
+    }
+
+    .listView .orderBtn {
+        opacity: 1;
+        height: 50px;
+        width: 200px;
+    }
+
+    .listView:hover .orderBtn {
+        height: 150px;
+        transition: color .2s;
+    }
+
+    .listView .orderBtn:hover {
+        color: white;
+    }
+}
