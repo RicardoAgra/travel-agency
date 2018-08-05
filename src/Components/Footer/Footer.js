@@ -5,31 +5,44 @@ const footer = ( props ) => {
     return(
         <footer className={ Styles.footer }>
 
-            <div className={ Styles.contacts }>
-                <h4>CONTACT US</h4>
-                <p>cm@travel-agency.com</p>
-            </div>
+            <ul className={ Styles.contacts }>
+                <li>
+                    <span className="fa fa-map-marker "></span>
+                    <div>
+                        <p>6170 Peshwar Place</p>
+                        <p> Washington, DC 20521-6170</p>
+                    </div>
+                </li>
+                <li>
+                    <span className="fa fa-phone"></span>
+                    <p>555-1234567</p>
+                </li>
+                <li>
+                    <span className="fa fa-envelope-o"></span>
+                    <p>cm@travel-agency.com</p>
+                </li>
+            </ul>
 
-            <div className={ Styles.social }>
-                <h4>FOLLOW US</h4>
-                <ul>
-                    <li>
-                        <span className="fa fa-facebook"></span>
-                        <a href="/" target="_blank">Facebook</a>
-                    </li>
-                    <li>
-                        <span className="fa fa-twitter"></span>
-                        <a href="/" target="_blank">Twitter</a>
-                    </li>
-                    <li>
-                        <span className="fa fa-pinterest"></span>
-                        <a href="/" target="_blank">Pinterest</a>
-                    </li>
-                </ul>
-            </div>
+            <ul className={ Styles.social }>
+                <li>
+                    <span className="fa fa-facebook"></span>
+                </li>
+                <li>
+                    <span className="fa fa-twitter"></span>
+                </li>
+                <li>
+                    <span className="fa fa-pinterest"></span>
+                </li>
+                <li>
+                    <span className="fa fa-instagram"></span>
+                </li>
+                <li>
+                    <span className="fa fa-tumblr"></span>
+                </li>
+            </ul>
 
             <div className={ Styles.logo }>
-                <img scr="" alt="logo" />
+                <img src={ require("../../Assets/logo_small.png") } alt="multi-colored petals" />
             </div>
 
         </footer>

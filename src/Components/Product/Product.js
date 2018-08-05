@@ -6,7 +6,7 @@ import ProductBox from '../UI/ProductBox/ProductBox';
 class Province extends Component {
     state = {
         boxes: [{title: "Monte Gordo"},{title: "Albufeira"},{title: "Sagres"},{title: "Odeceixe"},{title: "Porto Corvo"}],
-        viewGrid: false
+        listView: false
     };
 
     render() {
@@ -21,10 +21,9 @@ class Province extends Component {
         
         return(
             <section className={ Styles.cityAlbum }>
-                
-                <button className={ Styles.toggleGrid }/>
 
                 <div className={ Styles.heading }>
+                    <button className={ Styles.listViewBtn }><img src={ require( "../../Assets/list-view.svg" ) }/></button>
                     <div className={ Styles.line }></div>
                     <h1 className={ Styles.title }>{ this.props.title }</h1>
                 </div>

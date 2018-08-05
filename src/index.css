@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 80px 0 0 0;
   padding: 0;
   font-family: 'Cuprum', sans-serif;
 }
@@ -19,4 +19,8 @@ body {
 ul {
   list-style: none;
   padding: 0;
+}
+
+button {
+  border: 0 none transparent;
 }

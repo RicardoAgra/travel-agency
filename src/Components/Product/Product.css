@@ -4,29 +4,77 @@
 
 .heading {
     display: flex;
+    position: relative;
     align-items: center;
 }
 
-.title {
-    margin-left: 40px;
-    font-size: 1.8em;
-    color: var( --red );
-    font-family: var( --title-font );
+.heading .listViewBtn {
+    display: none;
 }
 
-.line {
+.heading .line {
     height: 4px;
     border-bottom: 2px solid var( --red );
     border-radius: 1px;
     flex-grow: 1;
 }
 
+.heading .title {
+    margin-left: 40px;
+    font-size: 1.8em;
+    color: var( --red );
+    font-family: var( --title-font );
+}
+
 .productBoxes {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     margin: 0 -10px;
 }
 
+.productBoxes:after {
+    content: "";
+    flex: auto;
+  }
+
 .productBoxes li {
-    flex-grow: 1;
     margin: 10px;
-} 
+}
+
+@media( min-width: 768px ){
+    .heading {
+        overflow: hidden;
+    }
+
+    .heading .listViewBtn {
+        display: block;
+        position: absolute;
+        top: 50%;
+        margin-top: -20px;
+        left: -100px;
+        transition: left .2s;
+        background-color: white;
+        padding: 0 20px;
+    }
+
+    .heading:hover .listViewBtn {
+        left: 0px;
+    } 
+
+    .heading .listViewBtn:active img {
+        border: 2px inset;
+    }
+
+    .heading .listViewBtn img {
+        border: 2px outset;
+        display: block;
+        margin-top: 2px;
+        height: 26px;
+        width: 22px;
+        height: 40px;
+        width: 40px;
+        padding: 5px;  
+    }
+
+}
