@@ -1,0 +1,85 @@
+.dropdown {
+    width: 100%;
+    color: #666;
+    cursor: pointer;
+    text-align: left;
+}
+
+.dropdown h2 {
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    font-size: 1em;
+    padding: 10px 5px 10px 15px;
+    margin: 5px 0 5px 0;
+}
+
+.dropdown.visible h2 {
+    background-color: rgba( 255,255,255,.5 );
+}
+
+.dropdown span {
+    position: relative;
+    top: 2px;
+    left: 5px;
+    font-size: .8em;
+}
+
+.dropdown .menu {
+    display: none;
+    margin: 10px 0;
+}
+
+.dropdown.visible .menu {
+    display: block;
+}
+
+.dropdown .menu li a {
+    padding: 10px 30px;
+    display: block;
+}
+
+.dropdown .menu li a:link,
+.dropdown .menu li a:visited {
+    color: #777;
+    text-decoration: none;
+}
+
+.dropdown .subscribe {
+    border-top: 1px solid white;
+}
+
+@media( min-width: 768px ) {
+    .dropdown {
+        position: relative;
+        width: auto;
+    }
+    
+    .dropdown h2 {
+        font-size: .8em;
+        margin: 10px 0 0 0; 
+        padding: 10px 20px;
+    }
+
+    .dropdown span {
+        display: none;
+    }
+
+    .dropdown .menu {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        background-color: white;
+        border: 1px solid #dedede;
+    }
+
+    .dropdown .menu li a {
+        font-size: .8em;
+        white-space: nowrap;
+        padding: 10px 15px;
+    }
+
+    .dropdown .subscribe {
+        border-top: 1px solid #eee;
+    }
+}
