@@ -16,15 +16,22 @@
     margin-left: 5px;
 }
 
-.contacts li {
+.contacts li button {
+    font-family: var( --body-font );
+    color: inherit;
     cursor: pointer;
     display: flex;
     align-items: flex-start;
     margin: 5px;
+    background-color: inherit;
+    font-size: .9em;
 }
 
-.contacts li:hover p {
+.contacts li button:hover,
+.contacts li button:active,
+.contacts li button:focus {
     color: var( --red );
+    padding: 0 8px;
 }
 
 .contacts li span {
@@ -37,7 +44,7 @@
 .contacts li p {
     text-align: left;
     margin: 0px;
-    font-size: 1em;
+    font-size: .9em;
 }
 
 .social {
@@ -45,27 +52,31 @@
     flex-grow: 1;
     justify-content: center;
     align-items: center;
-    margin: 0 -4px;
+    margin: 0 4px;
 }
 
-.social li {
+.social li button {
     cursor: pointer;
     margin: 0 4px;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     background-color: white;
     color: var( --purple );
 }
 
-.social li:hover {
-    background-color: var( --red );
+.social li button:hover,
+.social li button:active,
+.social li button:focus {
+    padding: 0;
     color: white;
+    border: 0px none transparent;
+    background-color: var( --red );
 }
 
 .social li span {
     text-align: center;
     width: 100%;
-    line-height: 20px;
+    line-height: 25px;
 }
 
 .logo {

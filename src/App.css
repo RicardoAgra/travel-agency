@@ -1,3 +1,28 @@
 .App {
   text-align: center;
 }
+
+.intro {
+  height: 400px;
+  background-image: linear-gradient( rgba( 255,255,255,0 ), rgba( 255,255,255,1 ) ), url( "./Assets/splash.jpg" );
+}
+
+.intro h1 {
+  margin: 0 0 30px 0;
+  padding-top: 40px;
+  font: 1.2em var( --title-font );
+}
+
+.intro h2 {
+  color: #555;
+  margin: 0 10px;
+  font: 300 1.3em var( --body-font );
+}
+
+@media( min-width: 768px ) {
+
+  .intro {
+    margin-top: 60px;
+  }
+
+}

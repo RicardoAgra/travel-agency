@@ -82,13 +82,14 @@ class Header extends Component {
                             <i className="fa fa-bars" aria-hidden="true"></i>
                         </button>
 
-                        <a className={ Styles.home } href="/">
+                        <button className={ Styles.home } onClick={ () =>{ this.props.changeDestination( "Featured" ) } }>
                             <img className={ Styles.logo } src={ require("../../Assets/logo_small.png") } alt="multi-colored petals" />
                             <h1 className={ Styles.title }>Travel Agency</h1>
-                        </a>
+                        </button>
 
                         <Dropdown selected={ this.state.isDestinationVisible } className={ Styles.dropdown } title="Destinations"
-                            click={ (event) => { this.dropdownHandler( event, "isDestinationVisible" ) } } 
+                            click={ (event) => { this.dropdownHandler( event, "isDestinationVisible" ) } }
+                            changeDestination = { this.props.changeDestination } 
                             links={[ 
                                 {title: "Africa", href: "#"},
                                 {title: "Europe", href: "#"},
@@ -98,7 +99,8 @@ class Header extends Component {
                         </Dropdown>
 
                         <Dropdown selected={ this.state.isAboutVisible } className={ Styles.dropdown } title="About us"
-                            click={ (event) => { this.dropdownHandler( event, "isAboutVisible" ) } } 
+                            click={ (event) => { this.dropdownHandler( event, "isAboutVisible" ) } }
+                            changeDestination = { () => {} }
                             links={[ 
                                 {title: "Who we are", href: "#"},
                                 {title: "Contact us", href: "#"},
@@ -119,7 +121,8 @@ class Header extends Component {
                 
                 </header>
                 
-                <div className={ searchMessageClasses.join( " " ) }>
+                <div className={ searchMessageClasses.join( " " ) }
+                    onClick={ () => { this.setState({ isSearchError: false }) } }>
                     No destination matches your search
                 </div>
             
