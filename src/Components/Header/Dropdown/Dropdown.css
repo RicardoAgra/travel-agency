@@ -14,7 +14,9 @@
     margin: 5px 0 5px 0;
 }
 
-.dropdown.visible h2 {
+.dropdown h2:active,
+.dropdown h2:focus,
+.dropdown h2:hover {
     background-color: rgba( 255,255,255,.5 );
 }
 
@@ -34,15 +36,9 @@
     display: block;
 }
 
-.dropdown .menu li a {
+.dropdown .menu li {
     padding: 10px 30px;
     display: block;
-}
-
-.dropdown .menu li a:link,
-.dropdown .menu li a:visited {
-    color: #777;
-    text-decoration: none;
 }
 
 .dropdown .subscribe {
@@ -56,7 +52,7 @@
     }
     
     .dropdown h2 {
-        font-size: .8em;
+        font-size: 1em;
         margin: 10px 0 0 0; 
         padding: 10px 20px;
     }
@@ -73,10 +69,14 @@
         border: 1px solid #dedede;
     }
 
-    .dropdown .menu li a {
+    .dropdown .menu li {
         font-size: .8em;
         white-space: nowrap;
         padding: 10px 15px;
+    }
+
+    .dropdown .menu li:hover {
+        background-color: rgba( 0,0,0,.05 );
     }
 
     .dropdown .subscribe {

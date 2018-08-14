@@ -7,43 +7,37 @@ const footer = ( props ) => {
 
             <ul className={ Styles.contacts }>
                 <li>
-                    <button>
-                        <span className="fa fa-building"></span>
-                        <div>
-                            <p>Avenida da República</p>
-                            <p>8000-000 Faro</p>
-                        </div>
-                    </button>
+                    <span className="fa fa-building"></span>
+                    <div>
+                        <p>Avenida da República</p>
+                        <p>8000-000 Faro</p>
+                    </div>
                 </li>
                 <li>
-                    <button>
-                        <span style={{ transform: 'rotateY( 180deg )' }} className="fa fa-phone"></span>
-                        <p>+351 289 133 456</p>
-                    </button>
+                    <span style={{ transform: 'rotateY( 180deg )' }} className="fa fa-phone"></span>
+                    <p>+351 289 133 456</p>
                 </li>
                 <li>
-                    <button>
-                        <span className="fa fa-envelope-o"></span>
-                        <p>info@travelagency.com</p>
-                    </button>
+                    <span className="fa fa-envelope-o"></span>
+                    <p>info@travelagency.com</p>
                 </li>
             </ul>
 
             <ul className={ Styles.social }>
                 <li>
-                    <button><span className="fa fa-facebook"></span></button>
+                    <span className="fa fa-facebook"></span>
                 </li>
                 <li>
-                    <button><span className="fa fa-twitter"></span></button>
+                    <span className="fa fa-twitter"></span>
                 </li>
                 <li>
-                    <button><span className="fa fa-pinterest"></span></button>
+                    <span className="fa fa-pinterest"></span>
                 </li>
                 <li>
-                    <button><span className="fa fa-instagram"></span></button>
+                    <span className="fa fa-instagram"></span>
                 </li>
                 <li>
-                    <button><span className="fa fa-tumblr"></span></button>
+                    <span className="fa fa-tumblr"></span>
                 </li>
             </ul>
 

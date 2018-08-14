@@ -5,8 +5,9 @@ const Dropdown = ( props ) => {
     let links = [];
     props.links.forEach( link => {
         links.push(
-            <li onClick={ () => { props.changeDestination( link.title ) } } >
-                <a className={ Styles[ link.class ] || "" } href={ link.href }>{ link.title }</a>
+            <li className={ Styles[ link.class ] || "" } 
+                onClick={ () => { props.changeDestination( link.title ) } } >
+                { link.title }
             </li>
         )
     });

@@ -3,7 +3,7 @@ import Styles from './Header.css';
 
 import Dropdown from './Dropdown/Dropdown'
 
-let destinations = [ "africa","europe","americas","asia","oceania" ];
+let destinations = [ "Featured","Africa","Europe","Americas","Asia and Oceania" ];
 
 class Header extends Component {
     state = {
@@ -29,12 +29,19 @@ class Header extends Component {
         }
 
         if( /^[a-zA-Z ]+$/.test( input ) ){
-            newState.isSearchError = destinations.indexOf( input.toLowerCase() ) === -1;
-        }
-    
-        this.setState( newState );
+            input = input.toLowerCase();
+            input = input.charAt( 0 ).toUpperCase() + input.slice( 1 );
 
-        window.setTimeout( ()=>{ this.setState({ isSearchError: false }) },5000 );
+            newState.isSearchError = destinations.indexOf( input ) === -1;
+        }
+
+        if( newState.isSearchError ){
+            this.setState( newState );
+            window.setTimeout( ()=>{ this.setState({ isSearchError: false }) },5000 );
+        }
+        else {
+            this.props.changeDestination( input );
+        }
     }
 
     enableMenuHandler = () => {
@@ -61,7 +68,10 @@ class Header extends Component {
     }
 
     render() {
-        let headerClasses = [ Styles.header ];
+        let headerClasses = [ Styles.header,"search-box" ];
+        if(  window.scrollY > 250 ){
+            headerClasses.push( "hasScrolled" );
+        }
         if( this.state.isMenuVisible ){
             headerClasses.push( Styles.menuVisible );
             if( this.state.isDestinationVisible || this.state.isAboutVisible ){
@@ -82,10 +92,10 @@ class Header extends Component {
                             <i className="fa fa-bars" aria-hidden="true"></i>
                         </button>
 
-                        <button className={ Styles.home } onClick={ () =>{ this.props.changeDestination( "Featured" ) } }>
+                        <div className={ Styles.home } onClick={ () =>{ this.props.changeDestination( "Featured" ) } }>
                             <img className={ Styles.logo } src={ require("../../Assets/logo_small.png") } alt="multi-colored petals" />
                             <h1 className={ Styles.title }>Travel Agency</h1>
-                        </button>
+                        </div>
 
                         <Dropdown selected={ this.state.isDestinationVisible } className={ Styles.dropdown } title="Destinations"
                             click={ (event) => { this.dropdownHandler( event, "isDestinationVisible" ) } }
@@ -110,15 +120,13 @@ class Header extends Component {
                         </Dropdown>
                     </nav>
 
-                    <div class={ Styles.searchBox }>
+                    <div className={ Styles.searchBox }>
                         <input id="search-input" type="text" placeholder="Search" />
                         <button onClick={ this.searchHandler }>
                             <span className="fa fa-search"></span>
                         </button>
                     </div>
 
-                    
-                
                 </header>
                 
                 <div className={ searchMessageClasses.join( " " ) }

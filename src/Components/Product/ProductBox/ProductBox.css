@@ -1,4 +1,13 @@
-.productBox:hover {
+.productBox {
+    background-color: inherit;
+    color: inherit;
+    padding: 0;
+    width: 220px;
+}
+
+.productBox:hover,
+.productBox:active,
+.productBox:focus {
     box-shadow: 0 0 5px grey;
 }
 
@@ -6,53 +15,68 @@
     visibility: hidden;
 }
 
-.productBox:hover .actionBox {
+.productBox:hover .actionBox,
+.productBox:active .actionBox,
+.productBox:focus .actionBox {
     visibility: visible;
 }
 
 .preview {
+    z-index: 10;
     cursor: pointer;
     position: relative;
     overflow: hidden;
     width: 220px;
     height: 150px;
     margin: 0 auto;
-    transition: all .2s;
 }
 
-.productBox:hover .preview {
+.preview .pane {
+    z-index: 10;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.productBox:hover .pane,
+.productBox:active .pane,
+.productBox:focus .pane {
     background: linear-gradient( rgba( 0,0,0,.5 ), rgba( 0,0,0,.5 ) );
 }
 
 .preview span {
+    z-index: 10;
     position: absolute;
     display: none;
     color: white;
-    font-size: 1.5em;
+    font-size: 3em;
     top: 50%;
     left: 50%;
     transform: translate( -50%,-50% );
 }
 
-.productBox:hover span {
+.productBox:hover span,
+.productBox:active span,
+.productBox:focus span {
     display: block;
 }
 
 .preview img {
     z-index: -1;
-    width: 150%;
-    height: 150%;
-    transform: translate( -33%, -33% );
-    transition: all .5s;
+    width: 100%;
+    height: 100%;
 }
 
-.productBox:hover img {
+.productBox:hover img,
+.productBox:active img,
+.productBox:focus img {
     width: 150%;
     height: 150%;
     transform: rotate( 15deg ) translate( -15%,-10% );
 }
 
 .triangle {
+    z-index: 15;
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -69,6 +93,15 @@
     color: var( --purple );
 }
 
+.description {
+    font-size: .8em;
+    color: #555;
+    padding: 0 10px;
+    text-align: justify;
+    text-justify: inter-word;
+    height: 64px;
+}
+
 .orderBtn {
     cursor: pointer;
     opacity: 0;
@@ -78,14 +111,16 @@
     height: 50px;
 }
 
-.orderBtn:hover {
-    color: white;
-    transition: all .5s;
-}
-
-.productBox:hover .orderBtn {
+.productBox:hover .orderBtn,
+.productBox:active .orderBtn,
+.productBox:focus .orderBtn {
     opacity: 1;
     background-color: var( --red );
+}
+
+.productBox .orderBtn:hover {
+    color: white;
+    transition: all .5s;
 }
 
 @media( min-width: 768px ){
@@ -95,6 +130,7 @@
         align-content: space-between;
         align-items: center;
         margin: 10px 0;
+        width: 100%;
     }
 
     .listView .info {
@@ -108,7 +144,10 @@
     }   
 
     .listView .info .description {
-        margin: 5px 0 10px 0;
+        max-width: 720px;
+        padding: 0;
+        margin: 15px 0 10px 0;
+        height: auto;
     }
 
     .listView .actionBox {

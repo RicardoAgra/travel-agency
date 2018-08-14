@@ -1,33 +1,46 @@
 import React, { Component } from 'react';
 import Styles from './Product.css';
 
-import ProductBox from '../ProductBox/ProductBox';
+import ProductBox from './ProductBox/ProductBox';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faThLarge } from '@fortawesome/free-solid-svg-icons';
 
 const destinations = {
-    Featured: [{title: "Namibia", image:"namibia.jpg", views: 8, shares: 24, likes: 52 },
-        {title: "Cyprus", image:"cyprus.jpg", views: 19 },
-        {title: "Brasil", image:"brasil.jpg", views: 3, likes: 15 },
-        {title: "Rome", image:"rome.jpg", views: 11, shares: 23, likes: 9 },
-        {title: "Japan", image:"japan.jpg", views: 10, shares: 10 }],
+    Featured: [{title: "Namibia", image:"namibia.jpg",text:"Lorem ipsum dolor sit amet.", views: 8, shares: 24, likes: 52 },
+        {title: "Cyprus", image:"cyprus.jpg",text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", views: 19 },
+        {title: "Brasil", image:"brasil.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.", views: 3, likes: 15 },
+        {title: "Rome", image:"rome.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", views: 11, shares: 23, likes: 9 },
+        {title: "Japan", image:"japan.jpg", text:"Lorem ipsum dolor sit amet.", views: 10, shares: 10 }],
 
-    Africa: [{title: "Cabo Verde", image:"cabo_verde.jpg", views: 28, shares: 56, likes: 82 },
-        {title: "Namibia", image:"namibia.jpg", views: 8, shares: 24, likes: 52 },
-        {title: "Tanzania", image:"tanzania.jpg", views: 2, likes: 3 }],
+    Africa: [{title: "Cabo Verde", image:"cabo_verde.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", views: 28, shares: 56, likes: 82 },
+        {title: "Namibia", image:"namibia.jpg", text:"Lorem ipsum dolor sit amet.", views: 8, shares: 24, likes: 52 },
+        {title: "Tanzania", image:"tanzania.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", views: 2, likes: 3 },
+        {title: "Cabo Verde", image:"cabo_verde.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", views: 28, shares: 56, likes: 82 },
+        {title: "Namibia", image:"namibia.jpg", text:"Lorem ipsum dolor sit amet.", views: 8,  shares: 24, likes: 52 },
+        {title: "Tanzania", image:"tanzania.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", views: 2, likes: 3 },
+        {title: "Cabo Verde", image:"cabo_verde.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", views: 28, shares: 56, likes: 82 },
+        {title: "Namibia", image:"namibia.jpg", views: 8, text:"Lorem ipsum dolor sit amet.", shares: 24, likes: 52 },
+        {title: "Tanzania", image:"tanzania.jpg", views: 2, text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", likes: 3 }],
 
-    Europe: [{title: "Berlin", image:"berlin.jpg", views: 14, shares: 8, likes: 21 },
-        {title: "Cyprus", image:"cyprus.jpg", views: 19 },
-        {title: "Prague", image:"prague.jpg", views: 7, likes: 8 },
-        {title: "Rome", image:"rome.jpg", views: 11, shares: 23, likes: 9 }],
+    Europe: [{title: "Berlin", image:"berlin.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", views: 14, shares: 8, likes: 21 },
+        {title: "Cyprus", image:"cyprus.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.", views: 19 },
+        {title: "Prague", image:"prague.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", views: 7, likes: 8 },
+        {title: "Rome", image:"rome.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", views: 11, shares: 23, likes: 9 }],
 
-    Americas: [{title: "Argentina", image:"argentina.jpg", views: 10, shares: 10, likes: 10 },
-        {title: "Brasil", image:"brasil.jpg", views: 3, likes: 15 },
-        {title: "Chile", image:"chile.jpg", views: 10, likes: 10 },
-        {title: "Mexico", image:"mexico.jpg", views: 10, shares: 10, likes: 10 }],
+    Americas: [{title: "Argentina", image:"argentina.jpg", text:"Lorem ipsum.", views: 10, shares: 10, likes: 10 },
+        {title: "Brasil", image:"brasil.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.", views: 10, likes: 10 },
+        {title: "Mexico", image:"mexico.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", views: 10, shares: 10, likes: 10 },
+        {title: "Argentina", image:"argentina.jpg", text:"Lorem ipsum.", views: 10, shares: 10, likes: 10 },
+        {title: "Brasil", image:"brasil.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.", views: 3, likes: 15 },
+        {title: "Chile", image:"chile.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", views: 10, likes: 10 },
+        {title: "Mexico", image:"mexico.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", views: 10, shares: 10, likes: 10 },
+        {title: "Argentina", image:"argentina.jpg", text:"Lorem ipsum.", views: 10, shares: 10, likes: 10 },
+        {title: "Brasil", image:"brasil.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.", views: 3, likes: 15 }],
 
-    "Asia and Oceania": [{title: "Cambodja", image:"cambodja.jpg", views: 21, shares: 33, likes: 48 },
-        {title: "Japan", image:"japan.jpg", views: 10, shares: 10 },
-        {title: "New Zealand", image:"new_zealand.jpg", views: 10, likes: 10 },
-        {title: "South Korea", image:"south_korea.jpg", views: 10, shares: 10, likes: 10 }]
+    "Asia and Oceania": [{title: "Cambodja", image:"cambodja.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", views: 21, shares: 33, likes: 48 },
+        {title: "Japan", image:"japan.jpg", text:"Lorem ipsum dolor sit amet.", views: 10, shares: 10 },
+        {title: "New Zealand", image:"new_zealand.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.", views: 10, likes: 10 },
+        {title: "South Korea", image:"south_korea.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.", views: 10, shares: 10, likes: 10 }]
 }
 
 class Province extends Component {
@@ -68,6 +81,7 @@ class Province extends Component {
                         isListView={ this.state.isListView } 
                         title={ productBox.title } 
                         image={ productBox.image }
+                        text={ productBox.text }
                         views={ productBox.views }
                         shares={ productBox.shares }
                         likes={ productBox.likes } />
@@ -83,7 +97,7 @@ class Province extends Component {
 
                 <div className={ Styles.heading }>
                     <button className={ Styles.listViewBtn } onClick={ this.listViewHandler }>
-                        <img src={ require( "../../Assets/list-view.svg" ) }/>
+                        <FontAwesomeIcon icon={ faThLarge } />
                     </button>
                     <div className={ Styles.line }></div>
                     <h1 className={ Styles.title }>{ this.props.title }</h1>
