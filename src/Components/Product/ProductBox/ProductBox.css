@@ -73,16 +73,19 @@
 
 .preview img {
     z-index: -1;
-    width: 100%;
-    height: 100%;
+    width: 110%;
+    height: 110%;
+    transform-origin: top right;
+    transform: translate( -10%,-10% );
+    transition: all .5s;
 }
 
 .productBox:hover img,
 .productBox:active img,
 .productBox:focus img {
-    width: 150%;
-    height: 150%;
-    transform: rotate( 15deg ) translate( -15%,-10% );
+    width: 120%;
+    height: 120%;
+    transform: rotate( 5deg );
 }
 
 .triangle {

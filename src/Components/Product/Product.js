@@ -41,6 +41,10 @@ const destinations = {
     "Asia and Oceania": [{title: "Cambodja", image:"cambodja.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", views: 21, shares: 33, likes: 48 },
         {title: "Japan", image:"japan.jpg", text:"Lorem ipsum dolor sit amet.", views: 10, shares: 10 },
         {title: "New Zealand", image:"new_zealand.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.", views: 10, likes: 10 },
+        {title: "South Korea", image:"south_korea.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.", views: 10, shares: 10, likes: 10 },
+        {title: "Cambodja", image:"cambodja.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", views: 21, shares: 33, likes: 48 },
+        {title: "Japan", image:"japan.jpg", text:"Lorem ipsum dolor sit amet.", views: 10, shares: 10 },
+        {title: "New Zealand", image:"new_zealand.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.", views: 10, likes: 10 },
         {title: "South Korea", image:"south_korea.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.", views: 10, shares: 10, likes: 10 }]
 }
 

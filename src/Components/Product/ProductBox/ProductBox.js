@@ -7,12 +7,9 @@ const productBox = ( props ) => {
     let pbClasses = [ Styles.productBox ];
 
     if( props.isListView ){
-        console.log( Styles.listView );
         pbClasses.push( Styles.listView );
     }
     if( props.isGridView ){
-        console.log( Styles.gridView );
-
         pbClasses.push( Styles.gridView );
     }
     

@@ -1,0 +1,52 @@
+@media( min-width: 768px ){
+
+    .review {
+        text-align: left;
+        padding: 0 70px;
+        width: 100%;
+    }
+
+    .title {
+        font-size: 2em;
+        font-weight: 400;
+    }
+
+    .card {
+        display: flex;
+    }
+
+    .picture {
+        margin-right: 20px;
+        min-width: 220px;
+        height: 220px;
+    }
+
+    .details .type {
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .details .author {
+        color: var( --red );
+    }
+
+    .stars .greyStar {
+        color: var( --light-grey );
+    }
+
+    .stars .yellowStar {
+        color: rgb(241, 241, 0);
+    }
+
+    .readMore {
+        margin-left: 10px;
+        cursor: pointer;
+        color: var( --red );
+    }
+
+    .readMore:hover {
+        text-decoration: underline;
+    }
+
+}

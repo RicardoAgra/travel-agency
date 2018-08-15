@@ -1,25 +1,36 @@
 import React from 'react';
-import Styles from './Review';
+import Styles from './Review.css';
 
-const Review = () => {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+
+const Review = ( props ) => {
+    let stars = [];
+    for( let i=0 ; i<5 ; i++ ){
+        let starType = Styles.greyStar;
+
+        if( i < props.stars ){
+            starType = Styles.yellowStar
+        }
+        stars.push( <FontAwesomeIcon className={ starType } icon={ faStar } /> )
+    }
+
     return(
-        <div className={ pbClasses.join( " " ) }>
-            <div className={ Styles.preview }>
-                <div className={ Styles.pane }></div>
-                <span className="fa fa-search-plus"></span> 
-                <img src={ require( `../../../Assets/${ props.image }` ) } alt="Beach" />
-                <div className={ Styles.triangle } />
+        <li className={ Styles.review }>
+            <h1 className={ Styles.title }>{ props.title }</h1>
+            <div className={ Styles.card }>
+                <img className={ Styles.picture } src={ require( `../../../Assets/${ props.image }` ) } alt="Picture of the travellers" />
+                <div>
+                    <div className={ Styles.details }>
+                        <span className={ Styles.stars }>{ stars }</span>
+                        <span className={ Styles.type }>by Traveller</span>
+                        <span className={ Styles.author }>{ props.author }</span>
+                    </div>
+                    <p className={ Styles.text }>{ props.text }<span className={ Styles.readMore }>Read more</span></p>
+                </div>
             </div>
-            
-            <div className={ Styles.info }>
-                <h1 className={ Styles.title }>{ props.title }</h1>
-                <p className={ Styles.description }>{ props.text }</p>
-                <ActionBox isListView={ props.isListView } className={ Styles.actionBox } actionBox={ Styles.actionBox } views={ props.views } shares={ props.shares } likes={ props.likes } />
-            </div>
-            
-            <button className={ Styles.orderBtn }>book now</button>
 
-        </div>
+        </li>
     );
 }
 
