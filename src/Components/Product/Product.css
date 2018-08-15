@@ -41,13 +41,14 @@
     flex: auto;
   }
 
-.productBoxes li {
+.productBox {
     margin: 10px;
 }
 
 .emptyWrap {
     height: 0;
     width: 220px;
+    margin: 10px;
 }
 
 @media( min-width: 768px ){
@@ -76,11 +77,8 @@
         color: var( --red );
     }
 
-    .heading .listViewBtn:active svg {
-        box-shadow: inset 0px 0px 4px #aaa;
-    }
-
     .heading .listViewBtn svg {
+        box-shadow: inset 0px 0px 4px #aaa;
         background-color: var( --light-grey );
         display: block;
         margin-top: 2px;

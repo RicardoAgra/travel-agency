@@ -1,6 +1,6 @@
 window.onload = function() {
     var header = document.getElementById( 'header' );
-    var offset = 250;
+    var offset = 200;
     
     if( header ){
         var wasUpdated = false;

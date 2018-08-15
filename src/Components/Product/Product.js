@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Styles from './Product.css';
 
 import ProductBox from './ProductBox/ProductBox';
+import Reviews from '../Reviews/Reviews';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThLarge } from '@fortawesome/free-solid-svg-icons';
 
@@ -43,20 +44,24 @@ const destinations = {
         {title: "South Korea", image:"south_korea.jpg", text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit.", views: 10, shares: 10, likes: 10 }]
 }
 
-class Province extends Component {
+class Product extends Component {
     state = {
         boxes: destinations[ this.props.title ],
-        isListView: false
+        isListView: false,
+        isGridView: false
     };
 
     listViewHandler = () => {
-        let newlistView = !this.state.isListView;
-        this.setState({ isListView: newlistView });
+        let isGridView = this.state.isListView;
+        let isListView = !isGridView;
+        
+        this.setState({ 
+            isListView: isListView,
+            isGridView: isGridView
+        });
     }
 
     componentWillReceiveProps = ( nextProps ) => {
-        console.log( nextProps );
-
         if( nextProps.title !== this.props.title ){
             this.setState({
                 boxes: destinations[ nextProps.title ]
@@ -72,13 +77,11 @@ class Province extends Component {
 
         let boxes = [];
         if( this.state.boxes.length ){
-            console.log( "Re-rendering boxes" );
-            console.log( this.state.boxes );
-
             boxes = this.state.boxes.map( productBox => (
                 <li className={ Styles.productBox }>
                     <ProductBox
-                        isListView={ this.state.isListView } 
+                        isListView={ this.state.isListView }
+                        isGridView={ this.state.isGridView }
                         title={ productBox.title } 
                         image={ productBox.image }
                         text={ productBox.text }
@@ -91,6 +94,11 @@ class Province extends Component {
                 boxes.push( <li className={ Styles.emptyWrap }></li> );
             }
         };
+
+        let reviews = null;
+        if( this.props.title === "Featured" ){
+            reviews = <Reviews />
+        }
         
         return(
             <section className={ Styles.product }>
@@ -106,10 +114,12 @@ class Province extends Component {
                 <ul className={ boxClasses.join( " " ) }>
                     { boxes }
                 </ul>
+
+                { reviews }
             
             </section>
         );
     };
 };
 
-export default Province;
+export default Product;

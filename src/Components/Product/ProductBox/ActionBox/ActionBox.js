@@ -2,6 +2,11 @@ import React from 'react';
 import Styles from './ActionBox.css';
 
 const actionBox = ( props ) => {
+    let boxClasses = [ props.actionBox ];
+    if( props.isListView ){
+        boxClasses.push( Styles.isListView )
+    }
+
     let views = null,
         shares = null,
         likes = null;
@@ -34,7 +39,7 @@ const actionBox = ( props ) => {
     }
 
     return(
-        <div className={ props.actionBox }>
+        <div className={ boxClasses.join( " " ) }>
             <ul className={ Styles.stats }>
                 { views }
                 { shares }

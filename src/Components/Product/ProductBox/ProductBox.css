@@ -1,3 +1,13 @@
+@keyframes listView {
+    from {transform: scale(.5)}
+    to {transform: scale(1)}
+}
+
+@keyframes gridView {
+    from {transform: scale(.5)}
+    to {transform: scale(1)}
+}
+
 .productBox {
     background-color: inherit;
     color: inherit;
@@ -125,12 +135,23 @@
 
 @media( min-width: 768px ){
     
+    .gridView {
+        transform-origin: top left;
+        animation: gridView .5s;
+    }
+
     .listView {
         display: flex;
         align-content: space-between;
         align-items: center;
         margin: 10px 0;
         width: 100%;
+        transform-origin: top left;
+        animation: listView .5s;
+    }
+
+    .listView .preview {
+        flex: 0 0 220px;
     }
 
     .listView .info {
@@ -144,9 +165,8 @@
     }   
 
     .listView .info .description {
-        max-width: 720px;
         padding: 0;
-        margin: 15px 0 10px 0;
+        margin: 15px 10px 10px 0;
         height: auto;
     }
 
@@ -170,6 +190,7 @@
         opacity: 1;
         height: 50px;
         width: 200px;
+        flex: 0 0 200px;
     }
 
     .listView:hover .orderBtn {

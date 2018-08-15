@@ -69,7 +69,7 @@ class Header extends Component {
 
     render() {
         let headerClasses = [ Styles.header,"search-box" ];
-        if(  window.scrollY > 250 ){
+        if(  window.scrollY > 200 ){
             headerClasses.push( "hasScrolled" );
         }
         if( this.state.isMenuVisible ){
